@@ -1,0 +1,4 @@
+Total number of lines: 27
+Number of characters: 490
+Number of comments: 9
+Total number of variables: 7
