@@ -6,3 +6,4 @@ main:
 
 clean:
 	del *.exe
+	del *.s
