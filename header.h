@@ -1,3 +1,6 @@
+// Author: Fergus Haak
+// Header file for Coursework 1.
+
 #pragma once
 #define MAX_LENGTH 100
 #define DICT_LENGTH 40

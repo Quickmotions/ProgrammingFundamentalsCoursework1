@@ -1,5 +1,4 @@
 // Author: Fergus Haak
-// Date of last modification: 09/03/2023
 // Main file for Coursework 1.
 
 #include "header.h"
@@ -101,7 +100,10 @@ int main(int argc, char **argv) {
     return 0;
 }
 
-
+// Fills the blank struct with temporary data to be overwritten
+// Parameters:
+// dictionary : struct to fill
+// dictLength: size of the struct
 void FillDictTemp(struct VarDict *dictionary, int dictLength){
     for (int i = 0; i < dictLength; i++) {
         dictionary->key[i] = "temp";
@@ -109,7 +111,11 @@ void FillDictTemp(struct VarDict *dictionary, int dictLength){
     }
 }
 
-
+// Adds a new key to struct
+// Parameters:
+// dictionary : struct to add variable to
+// varName: name of the new key to be added to struct
+// dictLength: size of the struct
 void AddVariable(struct VarDict *dictionary,  char* varName, int dictLength) {
     for (int i = 0; i < dictLength; i++) {
         if (strcmp(dictionary->key[i], "temp") == 0) {
@@ -121,6 +127,11 @@ void AddVariable(struct VarDict *dictionary,  char* varName, int dictLength) {
     printf("Dictionary is full!\n");
 }
 
+// Looks through struct for possible variable if found increases that variable count by 1
+// Parameters:
+// dictionary : struct to search
+// possibleVar: string to search struct for
+// dictLength: size of the struct
 void ReferenceVariable(struct VarDict *dictionary,  char* possibleVar, int dictLength){
     for (int i = 0; i < dictLength; i++) {
         if(strcmp(dictionary->key[i], possibleVar) == 0){
@@ -130,7 +141,11 @@ void ReferenceVariable(struct VarDict *dictionary,  char* possibleVar, int dictL
     }
 }
 
-
+// Creates a file and puts contents of dictionary struct into it
+// Parameters:
+// dictionary : struct to use data from
+// dictLength: size of the struct
+// fileName: original name of the .s file you would like given as a .c file
 void WriteDictToFile(struct VarDict *dictionary, int dictLength, char* fileName){
     FILE *outputFile;
     // create output file name from input file name
